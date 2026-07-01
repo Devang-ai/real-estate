@@ -95,7 +95,13 @@ const properties = [
 
 export const PropertyGrid = () => {
   const [showAll, setShowAll] = useState(false)
-  const displayedProperties = showAll ? properties : properties.slice(0, 4)
+  const [activeFilter, setActiveFilter] = useState('All')
+  
+  const filteredProperties = activeFilter === 'All' 
+    ? properties 
+    : properties.filter(prop => prop.category === activeFilter)
+    
+  const displayedProperties = showAll ? filteredProperties : filteredProperties.slice(0, 4)
 
   return (
     <section id="properties" className="py-24 bg-premium-navy relative">
@@ -121,7 +127,15 @@ export const PropertyGrid = () => {
             {['All', 'Residential', 'Commercial', 'Industrial'].map((cat) => (
               <button
                 key={cat}
-                className="px-4 py-2 glass rounded-full text-sm font-medium hover:bg-premium-gold hover:text-premium-navy transition-all duration-300"
+                onClick={() => {
+                  setActiveFilter(cat)
+                  setShowAll(false)
+                }}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                  activeFilter === cat 
+                    ? 'bg-premium-gold text-premium-navy' 
+                    : 'glass hover:bg-premium-gold hover:text-premium-navy'
+                }`}
               >
                 {cat}
               </button>
