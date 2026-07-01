@@ -69,7 +69,10 @@ export const Hero = () => {
                 <option className="bg-premium-navy">Plot/Land</option>
               </select>
             </div>
-            <button className="btn-premium flex items-center justify-center gap-2 group">
+            <button 
+              onClick={() => document.getElementById('properties')?.scrollIntoView({ behavior: 'smooth' })}
+              className="btn-premium flex items-center justify-center gap-2 group"
+            >
               <Search className="w-5 h-5 transition-transform group-hover:scale-125" />
               Find Now
             </button>

@@ -22,7 +22,7 @@ const properties = [
     baths: 1,
     sqft: '950 sq.ft',
     category: 'Commercial',
-    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800',
   },
   {
     id: 3,
@@ -66,7 +66,7 @@ const properties = [
     baths: 1,
     sqft: '1500 sq.ft',
     category: 'Commercial',
-    image: 'https://images.unsplash.com/photo-1582035766299-4c577bf4070a?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800',
   },
   {
     id: 7,
@@ -88,7 +88,7 @@ const properties = [
     baths: 2,
     sqft: '10000 sq.ft',
     category: 'Industrial',
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8ed7c663be?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&fit=crop&q=80&w=800',
   }
 ]
 

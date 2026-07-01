@@ -91,10 +91,6 @@ export const Testimonials = () => {
             </motion.div>
           ))}
         </div>
-
-        <div className="mt-16 text-center">
-            <button className="btn-premium">Write a Review</button>
-        </div>
       </div>
     </section>
   )
