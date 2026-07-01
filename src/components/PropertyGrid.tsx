@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Bed, Bath, Move, MapPin, Heart } from 'lucide-react'
 
@@ -93,6 +94,9 @@ const properties = [
 ]
 
 export const PropertyGrid = () => {
+  const [showAll, setShowAll] = useState(false)
+  const displayedProperties = showAll ? properties : properties.slice(0, 4)
+
   return (
     <section id="properties" className="py-24 bg-premium-navy relative">
       <div className="container mx-auto px-6">
@@ -126,7 +130,7 @@ export const PropertyGrid = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {properties.map((prop, index) => (
+          {displayedProperties.map((prop, index) => (
             <motion.div
               key={prop.id}
               initial={{ opacity: 0, y: 30 }}
@@ -185,7 +189,12 @@ export const PropertyGrid = () => {
         </div>
 
         <div className="mt-16 text-center">
-            <button className="btn-outline decoration-none">Explore All Properties</button>
+            <button 
+              onClick={() => setShowAll(!showAll)}
+              className="btn-outline decoration-none"
+            >
+              {showAll ? 'Show Less' : 'Explore All Properties'}
+            </button>
         </div>
       </div>
     </section>
