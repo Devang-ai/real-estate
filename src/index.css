@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --premium-navy: #0A192F;
+  --premium-gold: #C5A059;
+  --premium-amber: #FFBF00;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  @apply bg-premium-navy text-white antialiased;
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .glass-dark {
+    @apply bg-black/40 backdrop-blur-lg border border-white/10;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-premium-gold to-premium-amber;
+  }
+
+  .btn-premium {
+    @apply px-6 py-3 bg-gradient-to-r from-premium-gold to-premium-amber text-premium-navy font-bold rounded-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(197,160,89,0.5)] hover:-translate-y-1 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 border border-premium-gold text-premium-gold font-bold rounded-lg transition-all duration-300 hover:bg-premium-gold/10 active:scale-95;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--premium-navy);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--premium-gold);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--premium-amber);
+}
